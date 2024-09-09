@@ -1,32 +1,55 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+#include <iostream>
+using namespace std;
+void currency(int &currency1,int &currency2);
+int main()
+{
+    int currency1;
+    int currency2;
+   
+    
+   
+   currency(currency1,currency2);
+   cout<<"hence converted from"<<currency1<<" to "<<currency2;
+  
+   return 0; 
+}
+void currency(int &currency1,int &currency2){
+   
+    char value1;
+    char value2;
+    cout<<"welcome to currency converter"<<endl;
+    cout<<"select the value u want to change ";
+    cin>>currency1;
+    cout<<"select its currency\n a)rupee\n b)dollar";
+    cin>>value1;
+    cout<<"select in into value u want change\n a)rupee\n b)dollar";
+    cin>>value2;
+    if(value2=='a'){
+        if(value1=='b'){
+            currency2=currency1/80;
+            
+        }
+        else if(value1=='a'){
+            cout<<"hey its already in rupee!!!!!";
+            currency2=currency1;
+            
+            
+        }
+    }
+    else if(value2=='b'){
+        if(value1=='a'){
+            currency2=currency1*80;
+            
+        }
+        else if(value2=='b'){
+            cout<<"hey its already in dollar!!!!!";
+            currency2=currency1;
+            
+            
+        }
+        
+    }
+    else{
+        cout<<"u have selected wrong character select right one plss";
+    }
+}
